@@ -29,15 +29,15 @@ export const Report: FC = () => {
 
   const createMarkup = (name: string) => {
     return {
-      __html:
-        '<iframe height="1000" width="1000" src="http://localhost:3000/api/Report/DisplayReport?name=' +
-        name +
-        '" />',
+      __html: `<iframe height="100%" width="100%" src="https://www.fastreport.ru/documentation/UserManFrNET-ru/index.html?datafiltering.htm"/>`, //src="http://localhost:3001/api/Report/DisplayReport?name=${name}
     };
   };
   const getReport = (name: string) => {
     return name ? (
-      <div dangerouslySetInnerHTML={createMarkup(name)} />
+      <div
+        style={{ height: "95vh", width: "100%" }}
+        dangerouslySetInnerHTML={createMarkup(name)}
+      />
     ) : (
       <div />
     );
